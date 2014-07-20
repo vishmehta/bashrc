@@ -1,4 +1,4 @@
 bashrc
 ======
 
-Useful bash aliases
+Adding useful bash aliases here
