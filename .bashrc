@@ -193,15 +193,6 @@ alias k=mykill
 alias jdk='echo version; javac -version; echo javac; which javac'
 
 #-------------------------------------------------------------
-# SERVER
-#-------------------------------------------------------------
-
-alias killserver='killall lighttpd'
-alias runserver='home; ./run-httpd.sh'
-alias serverpass='home; cd usr; vim lighthttpd.pwd;'
-alias serverconf='home; cd usr; vim lighthttpd.conf'
-
-#-------------------------------------------------------------
 # SIZE
 #-------------------------------------------------------------
 
