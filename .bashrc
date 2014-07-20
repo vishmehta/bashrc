@@ -155,17 +155,6 @@ alias .4='cd ../../../../'
 alias .5='cd ../../../../..'
 
 #-------------------------------------------------------------
-# OTHER LOCATIONS
-#-------------------------------------------------------------
-
-alias projects='home; cd Projects'
-alias scripts='home; cd scripts'
-alias workspace='projects; cd workspace'
-alias intellij='projects; cd intellij'
-alias phpprojects='projects; cd PhpstormProjects'
-alias logs='projects; cd logs'
-
-#-------------------------------------------------------------
 # INFO
 #-------------------------------------------------------------
 
@@ -303,8 +292,6 @@ alias copy1='scp -r FROM TO'
 # INCLUDES
 #-------------------------------------------------------------
 
-source /Users/vishalmehta/Projects/scripts/alias/.godaddyaliases 
-source /Users/vishalmehta/Projects/scripts/alias/.gitaliases
 #. ~/scripts/alias/.gitaliases
 
 #-------------------------------------------------------------
