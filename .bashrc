@@ -280,10 +280,26 @@ alias copy1='scp -r FROM TO'
 #scp -r mehtavia mehtavia@xldn0592dwk:/sbclocal/data/
 
 #-------------------------------------------------------------
-# INCLUDES
+# GIT
 #-------------------------------------------------------------
-
 #. ~/scripts/alias/.gitaliases
+
+#-------------------------------------------------------------
+# SVN
+#-------------------------------------------------------------
+mysvnconflicts() {
+    svn status | grep -P '^(?=.{0,6}C'
+}
+alias svnconflicts='mysvnconflicts'
+mysvnrevert() {
+    echo svn revert -R.; echo svn status | egrep \'^\?\' | cut -c8- | xargs rm
+}
+alias svnrevert='mysvnrevert'
+mysvnswitch() {
+    eval svn switch $1
+}
+alias svnswitch='mysvnswitch'
+alias svninfo='echo SVNVersion...;svn --version | head -1;echo SVNInfo...;svn info;'
 
 #-------------------------------------------------------------
 # COLOR LS
@@ -301,3 +317,20 @@ export CLICOLOR=1
 #setenv LSCOLORS dxfxcxdxbxegedabagacad
 #LS_COLORS='di=01;33' ; export LS_COLORS 
 #export LSCOLORS=GxFxCxDxBxegedabagaced
+
+#-------------------------------------------------------------
+# Update All
+#-------------------------------------------------------------
+alias ua='sh ~/scripts/udpateall.sh'
+
+#-------------------------------------------------------------
+# Scripts
+#-------------------------------------------------------------
+myrandompass() { echo 1 = number of characters - defaults to 32; echo 2 = include special characters, 1 = yes, 0 = no - defaults to 1; sh ~/scripts/randompassword.sh $1 $2
+}
+alias randompass=myrandompass
+alias randomquote='sh ~/scripts/randomquote.sh'
+alias logfilescrape='sh ~/scripts/logfilescrape.sh'
+alias removefiles='sh ~/scripts/removefiles.sh'
+
+

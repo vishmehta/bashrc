@@ -1,1 +1,26 @@
+
+### General
 alias gitversion='git --version'
+alias testgit='ssh -T git@github.com'
+alias gitconfig='git config --list'
+
+### Branches and Tags
+mygitrebasebranchtomaster() { echo delete branch and creates a new branch remotely; git push origin --delete $1; git branch -D $1; git checkout -b $1; git push origin $1; git checkout master
+}
+alias gitrebasebranchtomaster='mygitrebasebranchtomaster'
+
+mygitdeletebranch() { git branch -d $1
+}
+alias gitdeletebranch='mygitdeletebranch'
+
+mygitnuketag() { git push origin --delete $1; git checkout -b $1; git push origin $1;
+}
+alias gitnuketag='mygitnuketag'
+
+### Use GitCommands.sh
+alias gitmaster='sh ~/scripts/gitcommands.sh master'
+alias gitbranch='sh ~/scripts/gitcommands.sh branch'
+alias gitpull='sh ~/scripts/gitcommands.sh pull'
+alias gitstatus='sh ~/scripts/gitcommands.sh status'
+alias gitstashlist='sh ~/scripts/gitcommands.sh stashlist'
+alias gitstashclear='sh ~/scripts/gitcommands.sh stashclear'
